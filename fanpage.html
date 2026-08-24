@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KIM SEOKJIN Fanpage</title>
+
+    <style>
+        /* =========================================
+           GLOBAL STYLES
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #faf7f2;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 8%;
+
+            background: rgba(250, 247, 242, 0.9);
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e85d75;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 100px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.4),
+                    rgba(0, 0, 0, 0.5)
+                ),
+                url("./public/jin7.jpg") 
+                center / cover no-repeat;
+            
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background: #e85d75;
+            color: white;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            background: #d94761;
+        }
+
+
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+
+        /* =========================================
+           HIGHLIGHTS
+        ========================================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            padding: 30px;
+
+            background: white;
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+
+        /* =========================================
+           GALLERY
+        ========================================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================================
+           FAN FACT
+        ========================================= */
+
+        .fact-section {
+            text-align: center;
+            background: #222;
+            color: white;
+        }
+
+        .fact-box {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        #fact {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            min-height: 60px;
+        }
+
+        .fact-button,
+        .fan-button {
+            padding: 12px 25px;
+
+            border: none;
+            border-radius: 25px;
+
+            background: #e85d75;
+            color: white;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .fact-button:hover,
+        .fan-button:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================================
+           FAN SECTION
+        ========================================= */
+
+        .fan-section {
+            text-align: center;
+        }
+
+        #fan-count {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+
+        /* =========================================
+           IMAGE MODAL
+        ========================================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+            z-index: 2000;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.9);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 900px;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+
+            font-size: 3rem;
+            color: white;
+
+            background: none;
+            border: none;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding: 40px 8%;
+
+            text-align: center;
+
+            background: #111;
+            color: white;
+        }
+
+        footer p {
+            color: #aaa;
+        }
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           DARK MODE
+        ========================================= */
+
+        body.dark {
+            background: #121212;
+            color: white;
+        }
+
+        body.dark .card {
+            background: #1f1f1f;
+        }
+
+        body.dark .card p,
+        body.dark .about p {
+            color: #bbb;
+        }
+
+        body.dark nav {
+            background: rgba(18, 18, 18, 0.9);
+        }
+
+        body.dark .nav-links a {
+            color: white;
+        }
+
+        .theme-button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+
+        /* =========================================
+           RESPONSIVE DESIGN
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 8%;
+
+                flex-direction: column;
+
+                background: white;
+                padding: 20px;
+
+                border-radius: 10px;
+
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .cards,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav>
+
+        <div class="logo">
+            KIM SEOKJIN
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#highlights">Highlights</a>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+
+            <li>
+                <a href="#fans">Fans</a>
+            </li>
+        </ul>
+
+        <div>
+            <button class="theme-button" id="themeButton">
+                🌙
+            </button>
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>KIM SEOKJIN</h1>
+
+            <a href="#about" class="hero-button">
+                Explore Fanpage
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section id="about">
+
+        <div class="section-title reveal">
+
+            <h2>JIN</h2>
+
+            <p>
+                Everything you need to know about Mr worldwide handsome
+            </p>
+
+        </div>
+
+        <div class="about reveal">
+
+            <p>
+                Kim Seok-jin, known professionally as Jin, is a South Korean singer, songwriter, and vocalist of the global boy band BTS. Debuting in 2013, he is celebrated for his emotive tenor vocals, solo tracks like "Epiphany", and his role as the oldest member of the group.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         HIGHLIGHTS
+    ========================================== -->
+
+    <section id="highlights">
+
+        <div class="section-title reveal">
+
+            <h2>Highlights</h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card reveal">
+
+                <h3>🎵 Music & Solo Career</h3>
+
+                <p>
+                    From BTS's vocal line to his solo releases, explore Jin's musical journey and the songs that showcase his unique voice and style.
+                </p>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <h3>🏆 Worldwide Handsome</h3>
+
+                <p>
+                    Known for his legendary confidence, dad jokes and chaotic energy, Jin has given ARMY countless unforgettable moments both on and off stage.
+                </p>
+                <img src="" alt="">
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <h3>🍳 Jin's Hobbies & Interests</h3>
+
+                <p>
+                    From cooking and gaming to fishing, eating and making everyone laugh, discover the hobbies and little quirks that make Seokjin uniquely Seokjin.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         GALLERY
+    ========================================== -->
+
+    <section id="gallery">
+
+        <div class="section-title reveal">
+
+            <h2>Gallery</h2>
+
+            <p>
+                beautiful jin photos
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item reveal">
+                <img
+                    src="./public/jin1.jpeg"
+                    alt="Performance"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="./public/jin2.jpeg"
+                    alt="Concert"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="./public/jin3.jpeg"
+                    alt="Festival"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="./public/jin4.jpeg"
+                    alt="Live performance"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="./public/jin5.jpeg"
+                    alt="Stage"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="./public/jin6.jpeg"
+                    alt="Concert crowd"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FAN FACTS
+    ========================================== -->
+
+    <section class="fact-section">
+
+        <div class="fact-box reveal">
+
+            <h2>Did You Know?</h2>
+
+            <p id="fact">
+                Click the button for a random fan fact!
+            </p>
+
+            <button class="fact-button" id="factButton">
+                Show Me A Fact
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FAN SECTION
+    ========================================== -->
+
+    <section class="fan-section" id="fans">
+
+        <div class="section-title reveal">
+
+            <h2>Join The Fans</h2>
+
+            <p>
+                Show your support!
+            </p>
+
+        </div>
+
+        <div class="reveal">
+
+            <div id="fan-count">
+                0
+            </div>
+
+            <p>
+                fans have clicked the button
+            </p>
+
+            <br>
+
+            <button class="fan-button" id="fanButton">
+                ❤️ I'm A Fan
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         IMAGE MODAL
+    ========================================== -->
+
+    <div class="modal" id="imageModal">
+
+        <button class="close-modal" id="closeModal">
+            &times;
+        </button>
+
+        <img id="modalImage" src="" alt="Expanded gallery image">
+
+    </div>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ by fans, for fans.
+        </p>
+
+        <p>
+            © 2026 Fanpage
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        /* =========================================
+           MOBILE MENU
+        ========================================== */
+
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        menuButton.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        // Close mobile menu when a link is clicked
+
+        const navItems = document.querySelectorAll(".nav-links a");
+
+        navItems.forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+
+        /* =========================================
+           DARK MODE
+        ========================================== */
+
+        const themeButton = document.getElementById("themeButton");
+
+        themeButton.addEventListener("click", function() {
+
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+
+                themeButton.textContent = "☀️";
+
+            } else {
+
+                themeButton.textContent = "🌙";
+
+            }
+
+        });
+
+
+        /* =========================================
+           RANDOM FAN FACT
+        ========================================== */
+
+        const facts = [
+
+            "Jin once rejected an SM Entertainment casting offer because he thought it was a scam. He was apparently approached on the street but didn't believe the offer was legitimate.",
+
+            "Jin has said that when he was younger, he wanted to become a journalist",
+
+            "Jin was born December 4 1992 in Gwacheon, Gyeonggi Province",
+
+            "Jin studied at Konkuk University in Seoul and graduated with a major in theater and film.",
+
+            "Jin plays the piano and the pipe organ.",
+
+            "Jin was picked as the “world’s most handsome male face” in a poll conducted by Czech doll company CzDollic in 2018. He beat 18,000 competitors from 58 countries.",
+
+            "He currently has two sugar gliders, Eomuk and Odeng as pets.",
+
+        ];
+
+        const factButton = document.getElementById("factButton");
+        const factText = document.getElementById("fact");
+
+        factButton.addEventListener("click", function() {
+
+            const randomIndex =
+                Math.floor(Math.random() * facts.length);
+
+            factText.textContent = facts[randomIndex];
+
+        });
+
+
+        /* =========================================
+           FAN COUNTER
+        ========================================== */
+
+        const fanButton = document.getElementById("fanButton");
+        const fanCount = document.getElementById("fan-count");
+
+        let count = 0;
+
+        fanButton.addEventListener("click", function() {
+
+            count++;
+
+            fanCount.textContent = count;
+
+            fanButton.textContent = "❤️ Thanks for being a fan!";
+
+        });
+
+
+        /* =========================================
+           IMAGE MODAL
+        ========================================== */
+
+        const galleryImages =
+            document.querySelectorAll(".gallery-item img");
+
+        const imageModal =
+            document.getElementById("imageModal");
+
+        const modalImage =
+            document.getElementById("modalImage");
+
+        const closeModal =
+            document.getElementById("closeModal");
+
+
+        galleryImages.forEach(function(image) {
+
+            image.addEventListener("click", function() {
+
+                modalImage.src = image.src;
+
+                modalImage.alt = image.alt;
+
+                imageModal.classList.add("active");
+
+            });
+
+        });
+
+
+        closeModal.addEventListener("click", function() {
+
+            imageModal.classList.remove("active");
+
+        });
+
+
+        // Close modal when clicking outside image
+
+        imageModal.addEventListener("click", function(event) {
+
+            if (event.target === imageModal) {
+
+                imageModal.classList.remove("active");
+
+            }
+
+        });
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealOnScroll = function() {
+
+            const windowHeight = window.innerHeight;
+
+            revealElements.forEach(function(element) {
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+
+                    element.classList.add("visible");
+
+                }
+
+            });
+
+        };
+
+
+        window.addEventListener("scroll", revealOnScroll);
+
+        // Run once when page loads
+
+        revealOnScroll();
+
+    </script>
+
+</body>
+</html>
