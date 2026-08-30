@@ -1,0 +1,194 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+
+.map-section h2 {
+    margin: 8px 0 12px 0;
+    font-size: 1.6rem;
+}
+
+
+.map-wrapper {
+    position: relative;         
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    background: white;
+}
+
+
+.park-map {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+}
+
+.map-wrapper .park-map { z-index: 1; }
+.marker { z-index: 2; }
+.tooltip { z-index: 3; }
+.legend { z-index: 4; }
+
+
+.marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: red;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px black;
+    transform: translate(-50%, -50%); 
+    cursor: pointer;
+}
+
+#marker-atlantis { top: 32%; left: 22%; }
+#marker-gyro     { top: 18%; left: 78%; }
+#marker-carousel { top: 62%; left: 30%; }
+#marker-river    { top: 70%; left: 70%; }
+
+
+.marker .tooltip {
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: black;
+    color: white;
+    font-size: 0.85rem;
+    padding: 6px 8px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.marker:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+
+.legend {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    background: white;
+    border: 1px solid rgb(223, 212, 212);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px black;
+}
+.legend h3 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+}
+.legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+}
+.legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid grey;
+}
+.legend .dot.ride { background: red; }
+.legend .dot.landmark { background: blue; }
+
+
+.back-to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    background: navy;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px black;
+    z-index: 999;
+    transition: transform 120ms ease, background 120ms ease;
+}
+.back-to-top:hover {
+    transform: translateY(-2px);
+    background: navy;
+}
+
+
+.site-footer {
+    text-align: center;
+    color: rgb(110, 105, 100);
+    font-size: 15px;
+    border-top: 1px solid white;
+    padding-top: 16px;
+    margin-top: 24px;
+}
+
+
+/* 10) Getting Here & Around section styling  */
+.transport {
+    margin-top: 32px;
+}
+
+.transport h2 {
+    margin-bottom: 16px;
+    font-size: 10px;
+}
+
+/* Two-column layout */
+.transport-columns {
+    display: flex;
+    gap: 24px;
+}
+
+.transport-info,
+.transport-discounts {
+    flex: 1;
+    background: white;
+    padding: 16px;
+    border: 1px solid rgb(239, 220, 220);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px black;
+}
+
+.transport h3 {
+    margin-top: 16px;
+    font-size: 10px;
+}
+
+.transport p,
+.transport ul {
+    margin: 6px 0 12px 0;
+}
+
+.transport ul {
+    padding-left: 20px;
+}
