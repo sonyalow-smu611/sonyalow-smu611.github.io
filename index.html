@@ -4,64 +4,193 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sonya</title>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: aquamarine;
-        font-size: 20px;
-      }
+    <link rel="stylesheet" href="index.css" />
 
-      h1 {
-        text-align: center;
-        font-size: 3em;
-      }
-
-      iframe {
-        display: block;
-        margin: 0 auto;
-      }
-
-      .about-box {
-        width: 800px;
-        height: 700px;
-        margin: 0 auto;
-        padding: 20px;
-        border-radius: 20px;
-        background-color: pink;
-        text-align: center;
-      }
-      .about-box img {
-        display: block;
-        margin: 0 auto;
-      }
-      .about-box p {
-        color: brown;
-        font-size: 1.2em;
-      }
-    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>hello im sonya low!</h1>
+    <div class="container text-center">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">hi im sonya</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#hobbies">Hobbies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#submit">Drama Reccs</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    <iframe
-      width="600"
-      height="300"
-      src="https://www.youtube.com/embed/jkMs-U187T0?autoplay=1&mute=1"
-      title="YouTube video player"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-    ></iframe>
 
-    <br /><br /><br>
 
-    <!-- small writeup about me in a box -->
-    <div class="about-box">
-      <img src="public/sonya.jpg" alt="sonya's photo" />
-      <p>
-        My name is sonya. I just turned 20 and i love watching kdramas and
-        cdramas and romcoms. I love going to the cinemas too, i've gone more
-        than 7 times this year!
-      </p>
+
+      <iframe
+        width="530"
+        height="300"
+        src="https://www.youtube.com/embed/jkMs-U187T0?autoplay=1&mute=1"
+        title="YouTube video player"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="mx-3 my-3"
+      ></iframe>
+
+      <!-- small writeup about me in a box -->
+      <div class="row">
+        <div class="col-md-8 my-5">
+          <img
+            src="public/sonya.jpg"
+            class="img-fluid h-40"
+            alt="sonya's photo"
+          />
+        </div>
+        <div class="col-md-4 my-5 text-start">
+          <h3>About me!</h3>
+          <p>
+            My name is sonya. I just turned 20 and i love watching kdramas and
+            cdramas and romcoms. I love going to the cinemas too, i've gone more
+            than 7 times this year! Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Amet minus nam repudiandae quis ut laudantium,
+            ipsa totam fuga numquam magnam? Voluptatem sunt numquam nam
+            repudiandae sapiente minus quos ipsam voluptatibus?
+          </p>
+        </div>
+      </div>
+
+      <h2 id="hobbies">Top Dramas of 2026</h2>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../belovedsummer.jpg"
+              class="d-block w-100"
+              alt="our beloved summer"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../loveforyou.jpeg"
+              class="d-block w-100"
+              alt="love for you"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../lovenextdoor.jpeg"
+              class="d-block w-100"
+              alt="love next door"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../sitr.jpeg"
+              class="d-block w-100"
+              alt="something in the rain"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary m-5"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        id="submit"
+      >
+        Submit Drama Recommendations
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade m-5"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Submit Drama Recommendations
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Form submission -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Drama Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="drama"
+                  />
+                </div>
+
+                </div>
+                <button type="submit" class="btn btn-success m-2">Submit</button>
+              </form>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
